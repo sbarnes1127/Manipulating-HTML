@@ -1,7 +1,7 @@
 // Objective #1. creates a button after the page is first loaded, and the button has a click event that creates an alert.
 $(document).ready(function () {
     let alertButton = $('<button></button>').text('Click for an alert');
-    $('body').prepend(alertButton);
+    $('#colorChangeDiv').prepend(alertButton);
 
     $(alertButton).click(function () {
         alert('Thanks for clicking!');
@@ -31,7 +31,7 @@ $(document).ready(function () {
 
     // Objective #4. creates paragraph with text and appends to body of doc. click function changes text color to a random color.
     let para = $('<p></p>').text('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.');
-    $('body').append(para);
+    $('#paraDiv').append(para);
     $(para).click(function () {
         $(this).css('color', randomColor());
     })
@@ -39,11 +39,20 @@ $(document).ready(function () {
     // Objective #5. creates button and div and appends them to the body. The function adds a span to the div on a click event.
     let spanButton = $('<button></button>').text('Click to add a span with my name!');
     let emptyDiv = $('<div></div>')
-    $('body').append(spanButton);
-    $('body').append(emptyDiv);
+    $('#spanButtonDiv').append(spanButton);
+    $('#spanButtonDiv').append(emptyDiv);
 
     $(spanButton).click(function () {
         let span = $('<span></span>').text('Sierra');
         $(emptyDiv).append(span);
+    })
+
+    // Objective #6. creates friend array, click event for friend list button that creates a li for each friend in the unordered list.
+    let friends = ['John', 'Shelby', 'Rachel', 'Brenna', 'Liz', 'Hunter', 'Jacinda', 'Amber', 'Nick', 'Lucas'];
+    $('#friendListButton').click(function () {
+        for (let i = 0; i < friends.length; i++) {
+            let listItem = $('<li></li>').text(friends[i]);
+            $('#friendList').append(listItem);
+        }
     })
 })
