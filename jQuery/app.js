@@ -11,4 +11,11 @@ $(document).ready(function () {
     $('#textBoxButton').click(function () {
         alert($('#textBox').val());
     })
+
+    $('#colorChangeDiv').mouseover(function () {
+        $(this).css('background-color', 'blue');
+    })
+    $('#colorChangeDiv').mouseout(function () {
+        $(this).css('background-color', 'white');
+    })
 })
