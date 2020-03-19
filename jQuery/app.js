@@ -6,4 +6,9 @@ $(document).ready(function () {
     $(alertButton).click(function () {
         alert('Thanks for clicking!');
     })
+
+    // Objective #2. click function on button to display alert of the contents of text box.
+    $('#textBoxButton').click(function () {
+        alert($('#textBox').val());
+    })
 })
