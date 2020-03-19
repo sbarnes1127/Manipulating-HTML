@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     btn2.addEventListener('click', function () {
         alert(inputBox.value);
     })
-    
+
     // Objective 3. grabs the div by id, adds a mouseover and mouseout function to change color to blue and then back to white.
     let div = document.getElementById('colorDiv');
     div.addEventListener('mouseover', function () {
@@ -29,5 +29,26 @@ document.addEventListener('DOMContentLoaded', function () {
     div.addEventListener('mouseout', function () {
         div.style.backgroundColor = 'white';
     })
+
+    // Objective 4. function to generate a random rgb color.
+    function randomColor() {
+        let R = Math.floor(Math.random() * 256);
+        let G = Math.floor(Math.random() * 256);
+        let B = Math.floor(Math.random() * 256);
+        let color = 'rgb(' + R + ',' + G + ',' + B + ')';
+        return color;
+
+    }
+    // Objective 4. creates paragraph with text, and adds click event listener to change text to a random color using the function above.
+    let para = document.createElement('p');
+    let paraText = document.createTextNode('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.');
+    para.appendChild(paraText);
+    document.body.appendChild(para);
+
+    para.addEventListener('click', function () {
+        para.style.color = randomColor();
+    })
+
+
 
 }) 
