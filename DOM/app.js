@@ -40,22 +40,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
     // Objective 4. creates paragraph with text, and adds click event listener to change text to a random color using the function above.
+    let paraDiv = document.getElementById('paraDiv');
     let para = document.createElement('p');
     let paraText = document.createTextNode('Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.');
     para.appendChild(paraText);
-    document.body.appendChild(para);
+    paraDiv.appendChild(para);
 
     para.addEventListener('click', function () {
         para.style.color = randomColor();
     })
 
     // Objective 5. creates empty div and button and appends them to the document.
+    let spanButtonDiv = document.getElementById('spanButtonDiv');
     let emptyDiv = document.createElement('div');
     let spanButton = document.createElement('button');
     let spanButtonText = document.createTextNode('click to add a span with my name!');
     spanButton.appendChild(spanButtonText);
-    document.body.appendChild(spanButton);
-    document.body.appendChild(emptyDiv);
+    spanButtonDiv.appendChild(spanButton);
+    spanButtonDiv.appendChild(emptyDiv);
 
     // Objective 5. creates click event to add a span to the div with my name in it.
     spanButton.addEventListener('click', function () {
@@ -64,6 +66,17 @@ document.addEventListener('DOMContentLoaded', function () {
         span.appendChild(spanText);
         emptyDiv.appendChild(span);
     })
+    // Objective 6. creates friend array, pulls button and ul by id, then adds click event to button to create list items for all of my friends in the array.
+    let friends = ['John', 'Shelby', 'Rachel', 'Brenna', 'Liz', 'Hunter', 'Jacinda', 'Amber', 'Nick', 'Lucas'];
+    let friendButton = document.getElementById('friendButton');
+    let friendList = document.getElementById('friendList');
 
-
+    friendButton.addEventListener('click', function () {
+        for (let i = 0; i < friends.length; i++) {
+            let listItem = document.createElement('li');
+            let listItemText = document.createTextNode(friends[i]);
+            listItem.appendChild(listItemText);
+            friendList.appendChild(listItem);
+        }
+    })
 }) 
