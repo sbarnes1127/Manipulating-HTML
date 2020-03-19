@@ -35,4 +35,15 @@ $(document).ready(function () {
     $(para).click(function () {
         $(this).css('color', randomColor());
     })
+
+    // Objective #5. creates button and div and appends them to the body. The function adds a span to the div on a click event.
+    let spanButton = $('<button></button>').text('Click to add a span with my name!');
+    let emptyDiv = $('<div></div>')
+    $('body').append(spanButton);
+    $('body').append(emptyDiv);
+
+    $(spanButton).click(function () {
+        let span = $('<span></span>').text('Sierra');
+        $(emptyDiv).append(span);
+    })
 })
