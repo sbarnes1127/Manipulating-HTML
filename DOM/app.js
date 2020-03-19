@@ -49,6 +49,21 @@ document.addEventListener('DOMContentLoaded', function () {
         para.style.color = randomColor();
     })
 
+    // Objective 5. creates empty div and button and appends them to the document.
+    let emptyDiv = document.createElement('div');
+    let spanButton = document.createElement('button');
+    let spanButtonText = document.createTextNode('click to add a span with my name!');
+    spanButton.appendChild(spanButtonText);
+    document.body.appendChild(spanButton);
+    document.body.appendChild(emptyDiv);
+
+    // Objective 5. creates click event to add a span to the div with my name in it.
+    spanButton.addEventListener('click', function () {
+        let span = document.createElement('span');
+        let spanText = document.createTextNode('Sierra');
+        span.appendChild(spanText);
+        emptyDiv.appendChild(span);
+    })
 
 
 }) 
